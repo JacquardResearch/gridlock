@@ -1,0 +1,9 @@
+# bazel output directories
+/bazel-*
+
+# user specific bazel configuration
+/user.bazelrc
+
+# direnv
+/.envrc
+.direnv

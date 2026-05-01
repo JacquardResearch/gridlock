@@ -1,0 +1,13 @@
+# Reasonable default .bazelrc
+# Should be first line so that later configs override
+import %workspace%/tools/preset.bazelrc
+
+common --incompatible_strict_action_env
+common --repo_env=BAZEL_DO_NOT_DETECT_CPP_TOOLCHAIN=1
+common --repo_env=BAZEL_NO_APPLE_CPP_TOOLCHAIN=1
+common --repo_env=BAZEL_DO_NOT_DETECT_SWIFT_TOOLCHAIN=1
+common --experimental_platform_in_output_dir
+
+# User-specific .bazelrc
+# Should be last line in order to enable overriding above configs
+try-import %workspace%/user.bazelrc
